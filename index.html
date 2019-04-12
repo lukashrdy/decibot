@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
+<script>
 
-<body>Decision</body>  <input type="text" name="decisionname" value="">
+function myFunction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("my-demo").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "https://6as0u8xg7j.execute-api.eu-west-1.amazonaws.com/prod/ReturnMyNameFuction", true);
+    xhttp.send();
 
+}
 
- </html>
+</script>
+<body><div align="center"><br><br><br><br>
+<h1>Hello <span id="my-demo">Cloud Gurus!</span></h1>
+<button onclick="myFunction()">Click me</button><br>
+</body>
+</html>
